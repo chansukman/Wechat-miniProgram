@@ -1,0 +1,13 @@
+<view class="columns-list">
+<view class="pro-column" wx:for="{{proList}}" wx:key="key" > 
+<image class="pro-logo" src="{{item.logo}}"></image>
+<view class="pro-body">
+<view class="pro-title">{{item.title}}</view>
+<text class="pro-desc">{{item.desc}}</text>
+<view class="pro-footer">
+<image class="btn-detail" src="{{item.detail}}" bindtap="toDetail" ></image>
+<image class="btn-buy" src="{{item.buy}}"bindtap="toBuy"></image>
+</view>
+</view>
+</view>
+</view>

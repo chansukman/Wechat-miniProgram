@@ -1,0 +1,7 @@
+<!--pages/work2/work2.wxml-->
+<view class="work2-body" wx:for="{{proList}}" wx:key="key">
+<view class="work2-title">{{item.title}}</view>
+<text class="work2-desc">{{item.desc}}</text>
+
+
+</view>

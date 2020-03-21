@@ -1,0 +1,15 @@
+/* pages/work3/work3.wxss */
+page{
+  background: white;
+}
+.work3-title{
+  padding: 10rpx;
+  font-size: 40rpx;
+  line-height: 1.5;
+}
+.work3-desc{
+  padding: 10rpx;
+  font-size: 35rpx;
+  line-height: 1.2;
+
+}

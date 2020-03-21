@@ -1,0 +1,4 @@
+/* pages/confirmbuy/confirmbuy.wxss */
+.tips{
+  font-size: 40rpx;
+}

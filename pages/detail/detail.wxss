@@ -1,0 +1,33 @@
+page{
+  background: #f3f3f3;
+}
+.zitie-column{
+   overflow:hidden;
+  padding: 50rpx;
+}
+.zitie-body{
+  width: 100%;
+  height: 200rpx;
+}
+.zitie-logo{
+  float: left;
+  width:200rpx;
+  height:200rpx;
+  margin-right: 50rpx;
+}
+.zitie-title{
+  padding:10rpx;
+  font-size: 40rpx;
+  line-height: 1.5;
+}
+.zitie-desc{
+  font-size: 32rpx;
+  color: #02064b;
+  
+}
+.line{
+  margin-top:30rpx;
+width: 100%;
+height: 2rpx;
+background-color: #D8D8D8;
+}

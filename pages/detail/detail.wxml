@@ -1,0 +1,10 @@
+<view class="zitie-column" wx:for="{{proList}}" wx:key="key">
+<view class="zitie-body" bindtap="{{item.works}}" >
+
+<image class="zitie-logo" src="{{item.logo}}"></image>
+<view class="zitie-title">{{item.title}}</view>
+<text class="zitie-desc">{{item.desc}}</text>
+<view class="line"></view>
+
+</view>
+</view>
