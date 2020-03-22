@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/compare/compare",
+    "pages/create/create",
+    "pages/involved/involved",
+    "pages/search/search",
+    "pages/share/share",
+    "pages/logs/logs",
+    "pages/detail/detail",
+    "pages/buy/buy"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#8000000F",
+    "navigationBarTitleText": "30天写好语数英",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#FFF",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#333",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "课程",
+        "iconPath": "images/image.png",
+        "selectedIconPath": "images/image.png"
+      },
+      {
+        "pagePath": "pages/compare/compare",
+        "text": "评比",
+        "iconPath": "images/image.png",
+        "selectedIconPath": "images/image.png"
+      },
+      {
+        "pagePath": "pages/share/share",
+        "text": "推广",
+        "iconPath": "images/image.png",
+        "selectedIconPath": "images/image.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap58.json"
+}

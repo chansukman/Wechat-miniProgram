@@ -1,0 +1,18 @@
+<swiper autoplay interval="1000" indicator-dots>
+<swiper-item>
+<image mode="widthFix" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=519236677,2363378310&fm=11&gp=0.jpg"></image></swiper-item>
+<swiper-item>
+<image mode="widthFix" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584620734953&di=96fb221858ee350d0ca2ab927f378efb&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%3D580%2Fsign%3Da7d7953c9813b07ebdbd50003cd79113%2F0e4cbe8f8c5494eeac3a1d0426f5e0fe99257e21.jpg"></image></swiper-item>
+<swiper-item>
+<image mode="widthFix "src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2111589636,2945989903&fm=26&gp=0.jpg"></image></swiper-item>
+</swiper>
+
+<view class="a1">
+<text>优秀作品展示\n\n</text>
+<button bindtap="icon1">作品展示</button>
+<text>\n\n</text>
+<button bindtap="icon2">创建投票</button>
+<text>\n\n</text>
+<button bindtap="icon3">查看我的投票</button>
+<text>\n\n</text>
+</view>
