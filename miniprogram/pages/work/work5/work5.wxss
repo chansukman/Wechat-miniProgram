@@ -1,0 +1,23 @@
+/* pages/work/work5/work5.wxss */
+page{
+  background: white;
+}
+.work5-title{
+  padding: 10rpx;
+  font-size: 40rpx;
+  line-height: 1.5;
+}
+.work5-desc{
+  padding: 10rpx;
+  font-size: 35rpx;
+  line-height: 1.2;
+
+}
+
+.work5-image{
+  margin-top: 50rpx;
+  margin-left:50rpx;
+  width: 640rpx;
+  height: 978rpx;
+
+}

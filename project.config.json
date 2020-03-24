@@ -1,27 +1,17 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
 		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
-		"coverView": true,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false
+		"enhance": true
 	},
-	"compileType": "miniprogram",
-	"libVersion": "2.10.3",
 	"appid": "wx177b344f38e60c14",
-	"projectname": "30tian",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
+	"projectname": "miniprogram-8",
+	"libVersion": "2.8.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -38,7 +28,6 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"gamePlugin": {
@@ -50,22 +39,56 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "pages/detail/detail",
-					"pathName": "pages/detail/detail",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/work1/work1",
-					"pathName": "pages/work1/work1",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/buy/buy",
+					"name": "购买课程",
 					"pathName": "pages/buy/buy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "上传作品页面",
+					"pathName": "pages/search/upload/upload",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "打卡作品",
+					"pathName": "pages/search/search",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "打卡主页面",
+					"pathName": "pages/compare/compare",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "创建投票",
+					"pathName": "pages/create/create",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "推广页面",
+					"pathName": "pages/vip/vip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "会员登陆",
+					"pathName": "pages/vip/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "注册页面",
+					"pathName": "pages/vip/register/register",
+					"query": "",
 					"scene": null
 				}
 			]

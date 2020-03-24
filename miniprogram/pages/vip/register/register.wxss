@@ -1,0 +1,30 @@
+/* miniprogram/pages/vip/register/register.wxss *//* miniprogram/pages/vip/login/login.wxss */
+.username{
+  border-style: solid;
+  border-width: 1rpx;
+  border-color: gray;
+  width: 90%;
+  text-align: center;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  min-height: 70rpx;
+  border-radius: 98rpx; 
+}
+.password{
+ border-style: solid;
+  border-width: 1rpx;
+  border-color: gray;
+  width: 90%;
+  text-align: center;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+   min-height: 70rpx;
+   border-radius: 98rpx; 
+}
+.registerbtn{
+  width: 80%;
+  margin-top: 20rpx;
+  background-color:#da391d;
+  color: white;
+  border-radius: 98rpx; 
+}
