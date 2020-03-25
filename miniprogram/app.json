@@ -1,0 +1,62 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/compare/compare",
+    "pages/logs/logs",
+    "pages/detail1/detail1",
+    "pages/detail2/detail2",
+    "pages/detail3/detail3",
+    "pages/buy/buy",
+    "pages/work/work1/work1",
+    "pages/work/work2/work2",
+    "pages/work/work3/work3",
+    "pages/work/work4/work4",
+    "pages/work/work5/work5",
+    "pages/confirmbuy/confirmbuy",
+    "pages/admin/my/my",
+    "pages/create/create",
+    "pages/involved/involved",
+    "pages/search/search",
+    "pages/vip/vip",
+    "pages/search/upload/upload",
+    "pages/vip/login/login",
+    "pages/vip/register/register"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#da391d",
+    "navigationBarTitleText": "30天写好语数英",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/toolbar/index.png",
+        "selectedIconPath": "images/toolbar/index@selected.png"
+      },
+      {
+        "pagePath": "pages/compare/compare",
+        "text": "打卡",
+        "iconPath": "images/toolbar/find.png",
+        "selectedIconPath": "images/image.png"
+      },
+      {
+        "pagePath": "pages/vip/vip",
+        "iconPath": "images/toolbar/vip.png",
+        "selectedIconPath": "images/image.png",
+        "text": "推广"
+      },
+      {
+        "pagePath": "pages/admin/my/my",
+        "text": "我的",
+        "iconPath": "images/toolbar/my.png",
+        "selectedIconPath": "images/toolbar/my@selected.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap45.json"
+}

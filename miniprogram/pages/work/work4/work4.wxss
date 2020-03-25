@@ -1,0 +1,21 @@
+
+page{
+  background: white;
+}
+.work4-title{
+  padding: 10rpx;
+  font-size: 40rpx;
+  line-height: 1.5;
+}
+.work4-desc{
+  padding: 10rpx;
+  font-size: 35rpx;
+  line-height: 1.2;
+
+}
+.work4-image{
+  margin-top: 30rpx;
+  margin-left:50rpx;
+  width: 640rpx;
+  height: 978rpx;
+}

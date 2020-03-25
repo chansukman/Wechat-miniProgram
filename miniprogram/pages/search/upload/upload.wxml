@@ -1,0 +1,13 @@
+<!--wxml-->
+<view>
+<view class="title">上传作品</view>
+<input class="desc" placeholder="请输入描述" bindinput="descption"></input>
+</view>
+<view > 
+<image class="insert" bindtap='changeBigImg'  src='{{bigImg}}'></image>
+</view>
+<view >
+<image bindtap="getimage"></image>
+</view>
+<button class="uploadbtn" bindtap="toupload">上传</button>
+

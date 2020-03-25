@@ -1,0 +1,9 @@
+<!--pages/work/work5/work5.wxml-->
+<view class="work5-body" wx:for="{{proList}}" wx:key="key">
+<view class="work5-title">{{item.title}}</view>
+<text class="work5-desc">{{item.desc}}</text>
+<view>
+<image class="work5-image" src="{{item.image}}"></image>
+</view>
+
+</view>
