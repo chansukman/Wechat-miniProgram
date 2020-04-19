@@ -1,4 +1,4 @@
-
+const db = wx.cloud.database()
 var app = getApp();
 var util = require('../../../../utils/util.js');
 Page({
@@ -10,7 +10,7 @@ Page({
   },
   onLoad: function (options) {
     //获取缓存uid
-    var uid = wx.getStorageSync('uid');
+    var uid = wx.getStorageSync('name');
     this.setData({ uid });
   },
   onagree() {
@@ -50,9 +50,57 @@ Page({
       util.showToast('错误提示', '内容不能为空！');
       return false;
     } else {
-      //请求路径
-      var addrUrl = app.globalData.shopUrl + '/home/address/index/ty/a/uid/' + uid + '/n/' + n + '/t/' + t + '/s/' + province + '/ss/' + city + '/x/' + town + '/d/' + detailsAddr + '/m/' + this.data.m;
-      util.formHttp(addrUrl, 'POST', 'application/x-www-form-urlencoded', this.callback);
+      db.collection("address").add({
+        data: {
+          uid:this.data.uid,
+          name:n,
+          telephone: t,
+          address: address,
+          province:province,
+          city: city,
+          town: town,
+          detailsAddr:detailsAddr
+        },
+        success: res => {
+          console.log(res);
+        },
+        fail: err => {
+          console.log(err);
+        }
+      })
+      wx.showLoading({
+        title: '正在创建',
+        mask: true,
+        success: function () {
+
+        },
+        header: {
+          'content-type': 'multipart/form-data'
+        },
+        /*method: 'POST',
+        dataType: 'json',
+        responseType: 'text',*/
+        success: function (res) {
+          wx.hideLoading()
+          wx.showToast({
+            title: '创建成功！',
+            duration: 5000,
+            complete: function () {
+              wx.navigateTo({
+                url: '/pages/admin/address/choose/choose'
+              })
+            }
+          })
+
+        },
+        fail: function (res) {
+          wx.hideLoading()
+        },
+        complete: function (res) { },
+      })
+
+
+
     }
   },
   callback(res) {

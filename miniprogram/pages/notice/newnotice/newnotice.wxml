@@ -1,0 +1,49 @@
+<view class="container">
+  <form bindsubmit="formSubmit">
+    <view class="title" >
+      <image src="/images/icon/import.png"></image>
+      <text >最新课程公告标题：</text>
+      <input name="title" bindinput="title">{{title}}</input>
+    </view>
+
+    <view class="title details">
+      <image src="/images/icon/import.png"></image>
+      <text >发布人员：</text>
+      <input name="desc" maxlength='-1' bindinput="titleDetails">{{titleDetails}}</input>
+    </view>
+
+    <view class="title content" >
+      <image src="/images/icon/import.png"></image>
+      <text >公告内容：</text>
+      <input class="input" name="content" maxlength='-1' bindinput="titleContent">{{titleContent}}
+      </input>
+    </view>
+
+       <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">发布日期</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{startDate}}" start="2018-09-01" end="2020-09-01" bindchange="bindStartDateChange">
+              <view class="weui-input">{{startDate}}</view>
+            </picker>
+          </view>
+        </view>
+
+
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">发布时间</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="time" value="{{startTime}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+              <view class="weui-input">{{startTime}}</view>
+            </picker>
+          </view>
+        </view>
+
+    <button class="release" formType="submit">发布</button>
+  </form>
+</view>
+

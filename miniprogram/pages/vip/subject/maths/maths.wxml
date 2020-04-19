@@ -1,0 +1,4 @@
+<view class="numbers" wx:for="{{proList}}" wx:key="key">
+<image class="image" src="{{item.image}}"></image>
+<text class="desc">{{item.desc}}</text>
+</view>

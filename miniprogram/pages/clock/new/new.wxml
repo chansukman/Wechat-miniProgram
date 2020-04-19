@@ -1,0 +1,102 @@
+<view class='a' wx:for="{{collection}}"><!--wx:for是微信数据绑定的一种方式，该数组有多少数据就显示多少个view-->
+<view>
+
+</view>
+    <!--index为每个数据对应的下标-->
+    
+<!--测试--> <!--图片展示区域-->
+      <view class="cu-form-group">
+        <view class="grid col-3 grid-square flex-sub" style='margin-top:20rpx;'>
+          
+            <image  src="{{item.image}}"></image>
+          
+        </view>
+      </view>
+      <view class="content" >
+        <view class="c-top">
+          <!--text class="title">{{v.title}}</text-->
+          <text class="info ellipsis-3">
+          <text class="title">作品名称：{{item.name}}</text>
+          </text>
+        </view>
+<view class="c-top">
+          <!--text class="title">{{v.title}}</text-->
+          <text class="info ellipsis-3">
+           <text class="date">打卡日期：{{item.startDate}}   {{item.startTime}}</text>
+          </text>
+        </view><view class="c-top">
+          <!--text class="title">{{v.title}}</text-->
+          <text class="info ellipsis-3">
+          <text class="detail">作品描述：{{item.desc}}</text>
+          </text>
+        </view>
+            
+        <view class="c-bottom">
+          <view class="user">
+           <!--作者头像 <image class="u-img" src="{{v.avatar}}"></image>  -->
+            <view class="u-box">
+              <text class="u-name">作者：{{item.creator}}</text>
+              <!--<text class="u-time">{{v.time}}</text>-->
+            </view>
+          </view>
+
+<!--空白占位功能-->
+ <view class="right">
+ <view class="text-gray text"><view class="cuIcon-messagefill margin-lr-xs">
+  <image class="like" src='/images/icon/1.png'    data-id="{{item._id}}"></image>
+<text class="like text"></text>
+</view>
+      </view>
+          </view>
+ <view class="right">
+ <view class="text-gray text"><view class="cuIcon-messagefill margin-lr-xs">
+  <image class="like" src='/images/icon/1.png'    data-id="{{item._id}}"></image>
+<text class="like text"></text>
+</view>
+      </view>
+          </view>
+ <view class="right">
+ <view class="text-gray text"><view class="cuIcon-messagefill margin-lr-xs">
+  <image class="like" src='/images/icon/1.png'   data-id="{{item._id}}"></image>
+<text class="like text"></text>
+</view>
+      </view>
+          </view>
+<!--空白占位结束-->
+
+<!--关注功能-->
+ <view class="right">
+ <view class="text-gray text"><view class="cuIcon-messagefill margin-lr-xs">
+  <image class="like" src='/images/icon/focus.png'   bindtap="toright" data-id="{{item._id}}"></image>
+<text class="like text"></text>
+</view>
+      </view>
+          </view>
+<!--关注功能结束-->
+
+
+
+<!--点赞功能-->
+ <view class="right">
+ <view class="text-gray text"><view class="cuIcon-messagefill margin-lr-xs">
+  <image class="like" src='/images/icon/like.png'   bindtap="tolike" data-id="{{item._id}}"></image>
+<text class="like text">{{item.like}}</text>
+</view>
+      </view>
+          </view>
+<!--点赞功能结束-->
+
+
+        </view>
+      </view>
+    </view>
+  <!--测试结束-->
+<!--pages/post/post-detail/post-detail.wxml-->
+
+
+
+ 
+
+
+
+

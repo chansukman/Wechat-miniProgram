@@ -1,0 +1,20 @@
+<view class="register">
+  <form bindsubmit="formSubmit">
+    <view>
+      <input  bind:change='inputName' maxlength="15" title="账号" autofocus placeholder="请输入账号"  name="phoneNumber" type='number'  onblur="getPhone"></input>
+    </view>
+    
+    <view>
+      <input  bind:change='inputPassword' maxlength="15" title="密码" autofocus placeholder="请输入密码"  name="password" type="password" ></input>
+    </view>
+
+    <radio-group bindchange='radioChange'> 
+<text>请选择注册身份：</text>
+<radio wx:for-items="{{radios}}" wx:key="name" value="{{item.name}}" color="#2ea7e0">
+<text>{{item.name}}</text>
+</radio>
+</radio-group>
+   
+    <button bindtap='register' type="success" class="btn" disabled='{{registerBtn}}' form-type='submit'>免费注册</button>
+  </form>
+</view>

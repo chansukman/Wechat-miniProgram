@@ -1,0 +1,27 @@
+<view class='swiper-notice'>
+  <text>公告</text>
+  <image src='../../images/notice.png'></image>
+  <swiper class='swiper-nav' vertical='true' autoplay='true' circular='true' interval='5000'>
+    <block wx:for='{{noticeList}}' wx:key='unique'>
+      <navigator url='{{item.url}}' hover-class='none'>
+        <swiper-item>
+          <view class='swiper-context'>{{item.context}}</view>
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+</view>
+<import src="../../tpls/search/search.wxml" />
+
+<view class="container">
+<!--发表文章-->
+  <button class="release" bindtap='releaseNewNotice'>公告信息发布</button>
+  </view>
+
+
+  <view wx:for="{{collection}}">
+   <text>最新竞赛信息标题：{{item.title}}</text>
+  <text>发布人：{{item.desc}}</text>
+  <text>公告内容：{{item.content}}</text>
+  <text>发布时间：{{item.startDate}} {{item.startTime}}</text>
+</view>

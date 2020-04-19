@@ -1,167 +1,295 @@
-var app = getApp();
-var utils = require('../../utils/util.js');
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    searchShow: false,
-    searchValue: '',
-    historyArray2: [],
-    noContent: false,
-    hasContent: true,
-    secondShop: []
+    cateItems: [
+      {
+        cate_id: 1,
+        cate_name: "课程简介",
+        ishaveChild1:true,
+        children:
+          [
+          
+            {
+             child_id: 1,
+            name: '',
+              image: "/images/chineseintro.jpg",
+            location: "chinesework1"
+            },
+          {
+            child_id: 2,
+            name: '',
+            image: "/images/mathsintro.jpg",
+            location: "mathswork1"
+          },
+          {
+            child_id: 3,
+            name: '',
+            image: "/images/englishintro.jpg",
+            location: "englishwork1"
+          },
+          
+        ]
+          
+      },
+      {
+        cate_id: 2,
+        cate_name: "课程目录",
+        ishaveChild: true,
+        children:
+          [{
+            child_id: 1,
+            name: '语文笔画、部首汉字\n书写训练',
+            image: "/images/chinese.png",
+            location:"chinese"
+          },
+            {
+              child_id: 2,
+              name: '语文作业\n书写指导',
+              image: "/images/chineseworkguide.gif",
+              location: "chineseworkguide"
+            },
+            {
+              child_id: 3,
+              name: '数字及数学符号\n书写训练',
+              image: "/images/maths.png",
+              location: "maths"
+            },
+            {
+              child_id: 4,
+              name: '数学作业\n书写指导',
+              image: "/images/mathsworkguide.gif",
+              location:"mathsworkguide"
+            },
+            {
+              child_id: 5,
+              name: '英文字母、单词、短语\n书写训练',
+              image: "/images/english.png",
+              location:"english"
+            },
+            {
+              child_id: 6,
+              name: '英语作业\n书写指导',
+              image: "/images/englishworkguide.gif",
+              location:"englishworkguide"
+            }
+            
+          ]
+      },
+      
+      {
+        cate_id: 4,
+        cate_name: "优秀练字",
+        ishaveChild2: true,
+        children: [
+          {
+            child_id: 1,
+            name: '',
+            image: "/images/bestwrite.png",
+            location: "bestwrite"
+          }
+        ]
+      },
+      {
+        cate_id: 5,
+        cate_name: "今日作业",
+        ishaveChild: true,
+        children: [
+          {
+            child_id: 1,
+            name: '语文作业',
+            image: "/images/chinesework.png",
+            location: "chinesework"
+          },
+          {
+            child_id: 2,
+            name: '语文作业指导',
+            image: "/images/chineseworkguide.gif",
+            location: "chineseworkguide"
+          },
+          {
+            child_id: 3,
+            name: '数学作业',
+            image: "/images/mathswork.png",
+            location: "mathswork"
+          },
+          {
+            child_id: 4,
+            name: '数学作业指导',
+            image: "/images/mathsworkguide.gif",
+            location: "mathsworkguide"
+          },
+          {
+            child_id: 5,
+            name: '英文作业',
+            image: "/images/englishwork.png",
+            location: "englishwork"
+          },
+          {
+            child_id: 6,
+            name: '英语作业指导',
+            image: "/images/englishworkguide.gif",
+            location: "englishworkguide"
+          }
+        ]
+      },
+    ],
+    curNav: 1,
+    curIndex: 0
   },
-  onLoad: function (options) {
-    //轮播图
-    var swiperUrl = app.globalData.shopUrl + '/home/index/index/ty/imglun';
-    utils.http(swiperUrl, this.swiperCallback);
-    //秒杀商品
-    var secondKillUrl = app.globalData.shopUrl + '/home/xsms/index/ty/msh';
-    utils.http(secondKillUrl, this.secondKillcallback);
-  },
-  onShow() {
-    var userInfo = wx.getStorageSync('user');
-    this.setData({ userInfo });
-    //商品列表
-    var url = app.globalData.shopUrl + '/home/goods/index/ty/shop';
-    utils.http(url, this.callback);
-    //判断用户是否登录
-    var uid = wx.getStorageSync('uid');
-    this.setData({ uid });
-    if (uid) {
-      //获取当前用户的展示信息
-      var userUrl = app.globalData.shopUrl + '/home/user/index/ty/user/uid/' + uid;
-      utils.http(userUrl, this.userMsgcallback);
-    }
-  },
-  callback(res) {
-    if (res.data) {
-      var listGoods = res.data.data.goods;
-      let noContent = this.data.noContent,
-        hasContent = this.data.hasContent;
-      this.setData({ noContent: false, hasContent: true, listGoods });
-    }
-  },
-  onOneShop(e) {
-    let id = e.currentTarget.dataset.idx;
+  chinese:function(){
     wx.navigateTo({
-      url: '../goods/goods?id=' + id,
+      url: '/pages/vip/subject/chinese/chinese',
     })
   },
-  signin() {
-    if (!this.data.uid) {
-      utils.showToast('请登录，登录后即可签到！', 'none');
-    } else {
-      wx.navigateTo({
-        url: '../admin/signin/signin',
-      })
-    }
-  },
-  coupon() {
+  chineseb: function () {
     wx.navigateTo({
-      url: '../coupon/coupon',
+      url: '/pages/vip/subject/chineseb/chineseb',
     })
   },
-  shop() {
+  maths: function () {
     wx.navigateTo({
-      url: '../find/shop/shop',
+      url: '/pages/vip/subject/maths/maths',
     })
   },
-  //轮播图
-  swiperCallback(res) {
-    var imgSrc = res.data.data.imglun;
-    this.setData({ imgSrc });
-  },
-  userLogin() {
-    var that = this;
+  mathsb: function () {
     wx.navigateTo({
-      url: '/pages/vip/login/login',
+      url: '/pages/vip/subject/mathsb/mathsb',
     })
   },
-  onBlur(event) {
-    let val = event.detail.value;
-    if (val !== '') {
-      var historyUrl = app.globalData.shopUrl + '/home/sousuo/index/ty/sp/de/' + val;
-      utils.http(historyUrl, this.historycallback);
-    } else {
-      let noContent = this.data.noContent,
-        hasContent = this.data.hasContent;
-      this.setData({ noContent: false, hasContent: true });
-    }
+  english: function () {
+    wx.navigateTo({
+      url: '/pages/vip/subject/english/english',
+    })
+  },
+  englishb: function () {
+    wx.navigateTo({
+      url: '/pages/vip/subject/englishb/englishb',
+    })
+  },
+
+
+
+  chinesework: function () {
+    wx.navigateTo({
+      url: '/pages/vip/todaywork/chinesework/chinesework',
+    })
+  }, 
+  chinesework1: function () {
+    wx.navigateTo({
+      url: '/pages/vip/intro/chineseintro',
+    })
+  },
+  chineseworkguide: function () {
+    wx.navigateTo({
+      url: '/pages/vip/todaywork/chineseworkguide/chineseworkguide',
+    })
+  },
+  mathswork: function () {
+    wx.navigateTo({
+      url: '/pages/vip/todaywork/mathswork/mathswork',
+    })
+  },
+  mathswork1: function () {
+    wx.navigateTo({
+      url: '/pages/vip/intro/mathsintro',
+    })
+  },
+  mathsworkguide: function () {
+    wx.navigateTo({
+      url: '/pages/vip/todaywork/mathsworkguide/mathsworkguide',
+    })
+  }, 
+  englishwork: function () {
+    wx.navigateTo({
+      url: '/pages/vip/todaywork/englishwork/englishwork',
+    })
+  },
+  englishwork1: function () {
+    wx.navigateTo({
+      url: '/pages/vip/intro/englishintro',
+    })
+  },
+  englishworkguide: function () {
+    wx.navigateTo({
+      url: '/pages/vip/todaywork/englishworkguide/englishworkguide',
+    })
+  },
+  bestwrite:function(){
+    wx.navigateTo({
+      url: '/pages/bestwrite/bestwrite',
+    })
+  },
+
+
+
+
+
+  //事件处理函数 
+  switchRightTab: function (e) {
+    // 获取item项的id，和数组的下标值 
+    let id = e.target.dataset.id,
+      index = parseInt(e.target.dataset.index);
+    // 把点击到的某一项，设为当前index 
     this.setData({
-      searchShow: false
+      curNav: id,
+      curIndex: index
     })
   },
-  onBindFocus() {
-    //获取该用户搜索历史
-    var searchHistoryUrl = app.globalData.shopUrl + '/Home/sousuo/index/ty/ls/uid/' + this.data.uid;
-    utils.http(searchHistoryUrl, this.searchHistoryCallback);
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
   },
-  //搜索历史
-  searchHistoryCallback(res) {
-    //获取到搜索关键词
-    let datas = res.data.data.ls,
-      historyArray = this.data.historyArray;
-    //清空数组
-    historyArray = [];
-    //循环将搜索关键词push到数组
-    for (let i = 0; i < datas.length; i++) {
-      historyArray.push(datas[i].title);
-    }
-    this.setData({
-      historyArray,
-      searchShow: true,
-      searchValue: ''
-    })
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
   },
-  onCancelImgTap(event) {
-    this.setData({
-      searchShow: false,
-      searchValue: ''
-    })
-    //商品列表
-    var url = app.globalData.shopUrl + '/home/goods/index/ty/shop';
-    utils.http(url, this.callback);
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
   },
-  //搜索
-  historycallback(res) {
-    if (res.data.data.shop.length !== 0) {
-      var newsArray = res.data.data.shop;
-      this.setData({ listGoods: newsArray });
-    } else {
-      let noContent = this.data.noContent,
-        hasContent = this.data.hasContent;
-      this.setData({ noContent: true, hasContent: false });
-    }
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
   },
-  //钱包余额及会员积分
-  userMsgcallback(res) {
-    var userMsg = res.data.data.user[0];
-    this.setData({ userMsg });
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
   },
-  //轮播图详情
-  detailsPage: function (e) {
-    var id = e.currentTarget.dataset.idx;
-    wx.navigateTo({
-      url: '../index/indexlist/indexlist?id=' + id,
-    })
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
   },
-  //秒杀列表
-  secondKillShop() {
-    wx.navigateTo({
-      url: '../find/secondKill/secondKill',
-    })
-  },
-  //秒杀商品
-  secondKillcallback(res) {
-    let secondShop = res.data.data.xsms;
-    secondShop=secondShop.slice(0, 3)
-    this.setData({ secondShop });
-  },
-  //秒杀商品详情
-  secondKillDetails(e){
-    let id = e.currentTarget.dataset.idx;
-    let endtime = e.currentTarget.dataset.endtime;
-    wx.navigateTo({
-      url: '../find/secondKillDetails/secondKillDetails?id=' + id + '&endtime=' + endtime,
-    })
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
   }
 })

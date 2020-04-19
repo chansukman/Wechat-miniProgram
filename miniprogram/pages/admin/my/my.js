@@ -1,123 +1,128 @@
 var app = getApp();
 var util = require('../../../utils/util.js');
+const db = wx.cloud.database();
 Page({
   data: {
     //付款内容循环
     payContact: [
-      { 'id': 0, 'text': '积分兑换', 'img': '/images/my/2.png' },
-      { 'id': 1, 'text': '待付款', 'img': '/images/my/1.png' },
-      { 'id': 2, 'text': '已完成', 'img': '/images/my/4.png' },
-      { 'id': 3, 'text': '打卡日历', 'img': '/images/my/3.png' }
+      { 'id': 0, 'text': '积分兑换', 'img': '/images/my/1.png' ,'bind':'shop'},
+      { 'id': 1, 'text': '购物车', 'img': '/images/my/2.png', 'bind': 'onPays' },
+      { 'id': 2, 'text': '已完成', 'img': '/images/my/4.png', 'bind': 'shopEnd'},
+      { 'id': 3, 'text': '打卡日历', 'img': '/images/my/3.png', 'bind': 'signin'}
     ],
     currentIdx: '',
-    phoneNumber: '52342947',
-    userImgUrl: false
+    name:'',
+    collection:[]
   },
-  onLoad: function (options) { 
-    var that=this;
-    //调用应用实例的方法获取全局数据  
-    app.getUserInfo(function (userInfo) {
-      //更新数据  
-      that.setData({
-        userInfo: userInfo
-      })
-    })
+  onLoad: function () {
+    
+    
   },
   onShow: function () {
     //判断用户是否登录
-    var uid = wx.getStorageSync('uid');
-    //获取用户头像
-    var userInfo = wx.getStorageSync('user');
-    this.setData({ uid, userInfo }); 
-    if (uid) {
-      //获取当前用户的展示信息
-      var userUrl = app.globalData.shopUrl + '/home/user/index/ty/user/uid/' + uid;
-      util.http(userUrl, this.userMsg);
-      //获取当前用户的优惠券数量
-      var cnumUrl = app.globalData.shopUrl + '/home/user/index/ty/cnum/uid/' + uid;
-      util.http(cnumUrl, this.cnumCount);
-      //判断用户头像是否显示
-      let userImgUrl = this.data.userImgUrl;
-      this.setData({ userImgUrl:true});
-    }
+    var that = this;
+    wx.getStorage({
+      key: 'user',
+      success: function (res) {
+        console.log(res.keys)
+        that.setData({
+          name: res.data.name
+        })
+      },    
+    })
+    //判断用户是否登录及获取所需缓存信息
+    var uid = wx.getStorageSync('name');
+    db.collection('user')
+      .where({
+        name: uid
+      })
+      .get({
+        success: res => {
+          console.log(res.data)
+
+          this.setData({
+            collection: res.data
+          })
+        }
+      })
+
+   
+    
   },
-  // 待付款
+  //退出登录
+  onSignIn: function () {
+    wx.navigateTo({
+      url: '../log/log',
+    })
+    wx.clearStorage()
+  },
+
+
+
+//积分兑换
+ shop: function () {
+    wx.navigateTo({
+      url: '../../extension/extension',
+    })
+  },
+  // 购物车
   onPays(e) {
-    if (!this.data.uid) {
+    wx.navigateTo({
+      url: '../../cart/cart'})
+    /*if (!this.data.uid) {
       util.showToast('请登录后查看！', 'none');
     } else {
       var currentIdx = e.target.dataset.idx;
       this.setData({ currentIdx });
       wx.navigateTo({
-        url: '../../pay/pays/pays?currentIdx=' + currentIdx,
+        url: '../../cart/cart?currentIdx=' + currentIdx,
       })
-    }
+    }*/
   },
-
-  // 地址
-  onAddress() {
-    if (!this.data.uid) {
-      util.showToast('请登录后查看！', 'none');
-    } else {
-      wx.navigateTo({
-        url: '../../admin/address/choose/choose'
-      })
-    }
-  },
-  
-  // 积分
-  onPoint() {
+  //已完成
+  shopEnd: function () {
     wx.navigateTo({
-      url: '../../find/shop/shop',
+      url: '../../shopend/shopend',
     })
   },
-  // 发票
-  onInvoice() {
-    var url = app.globalData.shopUrl + '/home/zpzz/index/ty/zp/uid/' + this.data.uid;
-    util.http(url, this.callback);
+  //打卡日历
+  signin: function () {
+    wx.navigateTo({
+      url: '../signin/signin',
+    })
   },
-  
-  // 签到
-  onSignIn() {
-    if (!this.data.uid) {
-      util.showToast('请登录后查看！', 'none');
-    } else {
-      wx.navigateTo({
-        url: '../signin/signin',
-      })
-    }
+//学习报告
+  myStudy: function () {
+    wx.navigateTo({
+      url: '../mystudy/mystudy',
+    })
   },
- 
-  //钱包余额及会员积分
-  userMsg(res) {
-    var userMsg = res.data.data.user[0];
-    this.setData({ userMsg });
+  //我的班级
+  myClass: function () {
+    wx.navigateTo({
+      url: '../myclass/myclass',
+    })
   },
   //我的发布
-  onRelease(){
-    if (!this.data.uid) {
-      util.showToast('请登录后查看！', 'none');
-    } else {
-      wx.navigateTo({
-        url: '../../find/bdPersonal/bdPersonal',
-      })
-    }
+  onRelease: function () {
+    wx.navigateTo({
+      url: '../onrelease/onrelease',
+    })
   },
-  callback(res) {
-    if (!this.data.uid) {
-      util.showToast('请登录后查看！', 'none');
-    } else {
-      if (!res.data) {
-        wx.navigateTo({
-          url: '../../invoice/addingTicket/addingTicket'
-        })
-      } else {
-        var invoiceMsg = res.data.data.zpzz[0];
-        wx.setStorageSync('invoiceMsg', invoiceMsg)
-        wx.navigateTo({
-          url: '../../invoice/showTicket/showTicket'
-        })
-      }
-    }
-  }
+  // 地址
+  onAddress() {
+
+    wx.navigateTo({
+      url: '../../admin/address/choose/choose'
+    })
+
+  },
+
+  //积分计算规则
+  mathPoint: function () {
+    wx.navigateTo({
+      url: '../mathpoint/mathpoint',
+    })
+  },
+ 
 })

@@ -1,19 +1,34 @@
 var app = getApp();
 var utils = require('../../../../utils/util.js');
+const db = wx.cloud.database();
 Page({
   data: {
     yzm: false,
     currentTab: 0,
     startX: 0, //开始坐标
-    startY: 0
+    startY: 0,
+    collection:[]
   },
   onLoad: function (options) {
-    var uid = wx.getStorageSync('uid');
+    var uid = wx.getStorageSync('name');
     this.setData({ uid});
+    const db = wx.cloud.database({
+      //这个是环境ID不是环境名称     
+      env: 'days30-jeacq'
+    })
+    db.collection('address').get({
+      success: res => {
+        console.log(res.data)
+        this.setData({
+          collection: res.data
+        })
+      }
+    })
+
   },
   onShow() {
-    var addrUrl = app.globalData.shopUrl + '/home/user/index/ty/addr/uid/' + this.data.uid;
-    utils.http(addrUrl, this.addrManage);
+   /* var addrUrl = app.globalData.shopUrl + '/home/user/index/ty/addr/uid/' + this.data.uid;
+    utils.http(addrUrl, this.addrManage);*/
   },
   onagree(e) {
     //获取当前地址id
@@ -28,8 +43,8 @@ Page({
     const d = address[index].dizhi;
     this.setData({n,t,s,ss,x,d,index});
     //修改默认地址
-    var defaultAddrChange = app.globalData.shopUrl + '/home/address/index/ty/u/uid/' + this.data.uid + '/aid/' + did + '/n/' + n + '/s/' + s + '/ss/' + ss + '/x/' + x + '/d/' + d + '/t/' + t + '/m/1';
-    utils.http(defaultAddrChange, this.defaultAddrChangecallback);
+   /* var defaultAddrChange = app.globalData.shopUrl + '/home/address/index/ty/u/uid/' + this.data.uid + '/aid/' + did + '/n/' + n + '/s/' + s + '/ss/' + ss + '/x/' + x + '/d/' + d + '/t/' + t + '/m/1';
+    utils.http(defaultAddrChange, this.defaultAddrChangecallback);*/
   },
   //收货地址 
   addrManage(res) {

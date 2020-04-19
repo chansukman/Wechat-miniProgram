@@ -1,13 +1,58 @@
-<view class="columns-list">
-<view class="pro-column" wx:for="{{proList}}" wx:key="key" > 
-<image class="pro-logo" src="{{item.logo}}"></image>
-<view class="pro-body">
-<view class="pro-title">{{item.title}}</view>
-<text class="pro-desc">{{item.desc}}</text>
-<view class="pro-footer">
-<image class="btn-detail" src="{{item.detail}}" bindtap="{{item.todetail}}" ></image>
-<image class="btn-buy" src="{{item.buy}}"bindtap="toBuy" ></image>
+<!--index.wxml-->
+
+<view class="container">
+<!--搜索 开始-->
+	<view class="user-section">
+        <image class="user_headimg" src="{{userInfo.avatarUrl}}"></image>
+        <view class="user_hello">
+            <text>{{name}}，欢迎你！</text>
+        </view>      
+    </view>
 </view>
+<!--搜索结束-->
+<!--滑动图片开始-->
+<view class="user_img_top">
+	<swiper class="banner-box" indicator-dots="true" autoplay="true" interval="5000" duration="1000"  circular='true'>
+            <block wx:for="{{imgUrls}}" wx:key="*this">
+                <swiper-item>
+                    <image bindtap="OnJump" data-url="{{item.url}}" src="{{item.image}}" class="slide-image" width="100%" height="100%"  />
+                </swiper-item>
+                
+            </block>
+        </swiper>
 </view>
+<!--滑动图片结束-->
+
+<!--公告分享-->
+<view class='floortitle'>
+    <view class='floortitlemoreicon'>课程公告</view>
+    <view class='floortitlemoretext' bindtap="notice" >更多> </view>
 </view>
+
+
+<!--经验分享-->
+<view class='floortitle'>
+    <view class='floortitlemoreicon'>语数英作业书写经验分享</view>
+    <view class='floortitlemoretext' bindtap="experience" >更多> </view>
 </view>
+
+<!--经验分享结束-->
+
+
+<!--比赛信息-->
+<view class='floortitle'>
+    <view class='floortitlemoreicon'>作业评比竞赛信息</view>
+    <view class='floortitlemoretext' bindtap="message" >更多> </view>
+</view>
+
+<!--比赛信息结束-->
+
+
+<!--课程推广-->
+<view class='floortitle'>
+    <view class='floortitlemoreicon'>课程推广</view>
+    <view class='floortitlemoretext' bindtap="extension" >更多> </view>
+</view>
+
+<!--课程推广结束-->
+

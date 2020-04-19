@@ -1,0 +1,31 @@
+<view class="container" >
+  <view class="my">
+    <image class="my-photo userinfo-avatar" src="/images/image.png"></image>
+    <text>欢迎使用此小程序</text>
+  </view>
+</view>
+<view class="register">
+  <form bindsubmit="formSubmit">
+    <view>
+      <input class="input" bind:change='inputName' maxlength="15" title="账号" placeholder="请输入账号" name="phoneNumber" type='number'></input>
+    </view>
+    <view>
+      <input class="input" bind:change='inputPassword' maxlength="15" title="密码"  placeholder="请输入密码" name="psd" type="password" ></input>
+    </view>
+   
+    <radio-group bindchange='radioChange'> 
+<text>请选择注册身份：</text>
+<radio wx:for-items="{{radios}}" wx:key="name" value="{{item.name}}" color="#2ea7e0">
+<text>{{item.name}}</text>
+</radio>
+</radio-group>
+
+    <button class="btn" form-type='submit' bindtap='login' type="primary" data-id="{{item._id}}">登录</button>
+  
+    <button class="btn" bindtap='onRegister'  bindtap='register' type="success">注册</button>
+    
+    
+  </form>
+
+  
+</view>

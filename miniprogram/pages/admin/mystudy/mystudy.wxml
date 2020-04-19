@@ -1,0 +1,48 @@
+
+<view>
+<view class="register">
+<view class="address-box">
+<view>
+<view >
+<image mode='widthFix' src="/images/my/10.png"></image>
+<view>
+<image mode='widthFix' src="/images/icon/import.png"></image><text>我的学习报告</text> 
+<view><image mode='widthFix' src="/images/icon/second_more.png"></image><text>经验分享</text></view>
+<view wx:for="{{jingyan}}">
+<text>我的分享次数：{{index+1}}</text>
+<view>
+<text>标题：{{item.title}}</text>
+</view>
+<view>
+<text>内容：{{item.desc}}</text>
+</view>
+</view>
+<view>
+<image mode='widthFix' src="/images/icon/second_more.png"></image><text>我的打卡</text>
+</view>
+<view wx:for="{{daka}}">
+<text>打卡次数：{{index+1}}</text>
+<view>
+<text>打卡标题：{{item.name}}</text>
+</view>
+<view>
+<text>打卡时间：{{item.startDate}}</text>
+</view>
+<view>
+<text>截至目前获得总点赞数:{{item.like}}</text>
+</view>
+</view>
+
+
+
+<text> .</text>
+</view>
+</view>
+
+</view>
+</view>
+</view>
+</view>
+
+
+

@@ -1,59 +1,81 @@
-//index.js
-//获取应用实例
 const app = getApp();
 
+Page(
 
-Page({
-  data: {
-    proList: [
-      {
-        logo: "/images/chinese.png",
-        title: "语文",
-        desc: "",
-        detail: "/images/icon/kf.png",
-        buy: "/images/icon/shop.png",
-        todetail: "todetail1",
-      },
-      {
-        logo: "/images/maths.png",
-        title: "数学",
-        desc: "",
-        detail: "/images/icon/kf.png",
-        buy: "/images/icon/shop.png",
-        todetail: "todetail2",
-      },
-      {
-        logo: "/images/english.png",
-        title: "英语",
-        desc: "",
-        detail: "/images/icon/kf.png",
-        buy: "/images/icon/shop.png",
-        todetail: "todetail3",
-      },
-    ],
-  },
   //事件处理函数
-  onLoad: function () {
-  },
-  /*跳转页面：查看详情 */
-  todetail1: function () {
-    wx.navigateTo({
-      url: '/pages/detail1/detail1',
-    })
-  },
-  todetail2: function () {
-    wx.navigateTo({
-      url: '/pages/detail2/detail2',
-    })
-  },
-  todetail3: function () {
-    wx.navigateTo({
-      url: '/pages/detail3/detail3',
-    })
-  },
-  toBuy: function () {
-    wx.navigateTo({
-      url: '/pages/buy/buy',
-    })
-  }
-})
+  {
+    data: {
+
+     
+
+
+
+
+
+      
+      autoplay: true,
+      userInfo: {},
+      imgUrls: [
+        {
+          image:"../../images/toolbar/notice.png",
+           url:"../notice/notice"
+        }, 
+        {
+          image:"../../images/toolbar/experience.png",
+          url:'../experience/experience'
+        },
+        {
+          image: "../../images/toolbar/message.png", 
+          url:"../message/message"
+        },
+        {
+          image: "../../images/toolbar/extension.png",
+          url:'../extension/extension'
+        }
+        ],
+
+    },
+    OnJump: function (e) { //点击图片触发的事件       
+     console.log(e)    // 查看标签上的属性        
+     var url = e.currentTarget.dataset.url // 取出标签上绑定的 url        
+     wx.navigateTo({ // 不关闭当前页面，跳转到非tarber页面          
+     url: url,        
+     })    
+     },
+    notice: function () {
+      wx.navigateTo({
+        url: '../notice/notice',
+      })
+    },
+
+    experience: function () {
+      wx.navigateTo({
+        url: '../experience/experience',
+      })
+    },
+    message: function () {
+      wx.navigateTo({
+        url: '../message/message',
+      })
+    },
+    extension: function () {
+      wx.navigateTo({
+        url: '../extension/extension',
+      })
+    },
+    onShow: function () {
+      //判断用户是否登录
+      var that = this;
+      wx.getStorage({
+        key: 'user',
+        success: function (res) {
+          console.log(res.keys)
+          that.setData({
+            name: res.data.name
+          })
+        },
+      })
+
+
+    },
+  })

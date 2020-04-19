@@ -1,0 +1,13 @@
+<view class="container newgoods">
+<view class="view_search">
+   <text>欢迎进入30天学好语数英课堂！</text>
+  </view>
+ <view class='collections' wx:key="key" wx:for='{{collections}}'>
+      <image mode="aspectFill" class='collect_item_img' src="{{item.src}}" style="height: {{collectItemHeight}}" bindtap="{{item.location}}"></image>
+      <text class='collect_description'>{{item.description}}</text>
+      
+  
+  </view>
+
+  <view class='loading' hidden="{{!isLoading}}">加载数据中...</view>
+</view>

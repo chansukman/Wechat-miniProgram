@@ -1,0 +1,14 @@
+<import src="../../tpls/search/search.wxml" />
+
+<view class="container">
+<!--发表文章-->
+  <button class="release" bindtap='releaseNewMessage'>竞赛信息发布</button>
+  </view>
+  <!--miniprogram/pages/message/message.wxml-->
+<view wx:for="{{collection}}">
+   <text>最新竞赛信息标题：{{item.title}}</text>
+  <text>发布人：{{item.desc}}</text>
+  <text>公告内容：{{item.content}}</text>
+  <text>发布时间：{{item.startDate}} {{item.startTime}}</text>
+</view>
+ 

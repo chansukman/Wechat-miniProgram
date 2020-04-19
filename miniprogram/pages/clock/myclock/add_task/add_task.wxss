@@ -1,0 +1,23 @@
+/* pages/createMission/createMission.wxss */
+
+.delete-button{
+  width: 50rpx;
+  height: 50rpx;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  left: 161rpx;
+  top: 62rpx;
+
+  }
+
+  .delete-button-text{
+    width: 50rpx;
+  height: 50rpx;
+    color: white;
+    font-size: 28rpx;
+    font-weight: bold;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;      
+  }

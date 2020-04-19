@@ -38,7 +38,7 @@ Page({
   },
   shop() {
     wx.navigateTo({
-      url: '../../find/shop/shop',
+      url: '../../extension/extension',
     })
   },
   //积分兑换
@@ -49,7 +49,7 @@ Page({
   //查看更多
   viewMore() {
     wx.navigateTo({
-      url: '../../find/shop/shop',
+      url: '../../extension/extension',
     })
   },
   //用户积分
@@ -61,7 +61,7 @@ Page({
   inteDetails(e) {
     let id = e.currentTarget.id;
     wx.navigateTo({
-      url: '../../integration/integration?id=' + id,
+      url: '../../extension/extension?id=' + id,
     })
   },
   //签到列表初始化

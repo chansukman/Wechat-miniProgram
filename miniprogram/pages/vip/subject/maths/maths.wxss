@@ -1,0 +1,7 @@
+.image{
+  margin-top: 10rpx;
+  margin-left: 50rpx;
+}
+.desc{
+  margin-top: 20rpx;
+}

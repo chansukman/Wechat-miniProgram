@@ -1,0 +1,7 @@
+
+
+<view wx:for="{{array}}"  >
+<view><text>商品名称：{{item.title}}</text></view>
+<view><text>价格：{{item.price}}</text></view>
+<view><text>数量价格：{{item.num}}</text></view>
+</view>

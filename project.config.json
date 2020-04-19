@@ -10,7 +10,7 @@
 		"enhance": true
 	},
 	"appid": "wx177b344f38e60c14",
-	"projectname": "miniprogram-8",
+	"projectname": "0417",
 	"libVersion": "2.8.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
@@ -46,25 +46,6 @@
 				},
 				{
 					"id": -1,
-					"name": "上传作品页面",
-					"pathName": "pages/search/upload/upload",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "打卡作品",
-					"pathName": "pages/search/search",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "打卡主页面",
-					"pathName": "pages/compare/compare",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "创建投票",
 					"pathName": "pages/create/create",
 					"query": "",
@@ -79,16 +60,435 @@
 				},
 				{
 					"id": -1,
-					"name": "会员登陆",
-					"pathName": "pages/vip/login/login",
+					"name": "pages/vip/vip",
+					"pathName": "pages/vip/vip",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "注册页面",
-					"pathName": "pages/vip/register/register",
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/clock",
+					"pathName": "pages/clock/clock",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/myclock/myclock",
+					"pathName": "pages/clock/myclock/myclock",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/myclock/new_task/new_task",
+					"pathName": "pages/clock/myclock/new_task/new_task",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/myclock/task_context/task_context",
+					"pathName": "pages/clock/myclock/task_context/task_context",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/clock",
+					"pathName": "pages/clock/clock",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/my/my",
+					"pathName": "pages/admin/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/onrelease/onrelease",
+					"pathName": "pages/admin/onrelease/onrelease",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/my/my",
+					"pathName": "pages/admin/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/my/my",
+					"pathName": "pages/admin/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/register/register",
+					"pathName": "pages/admin/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/admin/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "登陆",
+					"pathName": "pages/admin/log/log",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/my/my",
+					"pathName": "pages/admin/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail1/detail1",
+					"pathName": "pages/detail1/detail1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/extension/extension",
+					"pathName": "pages/extension/extension",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "最新打卡榜",
+					"pathName": "pages/clock/new/new",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "最快打卡榜",
+					"pathName": "pages/clock/fast/fast",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail1/detail1",
+					"pathName": "pages/detail1/detail1",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/buy/buy",
+					"pathName": "pages/buy/buy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/experience/experience",
+					"pathName": "pages/experience/experience",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/new/new",
+					"pathName": "pages/clock/new/new",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/log/log",
+					"pathName": "pages/admin/log/log",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/myclock/add_task/add_task",
+					"pathName": "pages/clock/myclock/add_task/add_task",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/address/choose/choose",
+					"pathName": "pages/admin/address/choose/choose",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/address/add/add",
+					"pathName": "pages/admin/address/add/add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/new/new",
+					"pathName": "pages/clock/new/new",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vip/vip",
+					"pathName": "pages/vip/vip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/experience/experience",
+					"pathName": "pages/experience/experience",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/bestwrite/bestwrite",
+					"pathName": "pages/bestwrite/bestwrite",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vip/vip",
+					"pathName": "pages/vip/vip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/mystudy/mystudy",
+					"pathName": "pages/admin/mystudy/mystudy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/mystudy/mystudy",
+					"pathName": "pages/admin/mystudy/mystudy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/my/my",
+					"pathName": "pages/admin/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/vip/vip",
+					"pathName": "pages/vip/vip",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/myclock/myclock",
+					"pathName": "pages/clock/myclock/myclock",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/register/register",
+					"pathName": "pages/admin/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/log/log",
+					"pathName": "pages/admin/log/log",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/notice/notice",
+					"pathName": "pages/notice/notice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/notice/notice",
+					"pathName": "pages/notice/notice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/message/message",
+					"pathName": "pages/message/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/message/newmessage/newmessage",
+					"pathName": "pages/message/newmessage/newmessage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/message/message",
+					"pathName": "pages/message/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/notice/newnotice/newnotice",
+					"pathName": "pages/notice/newnotice/newnotice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/notice/notice",
+					"pathName": "pages/notice/notice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/myfollow/myfollow",
+					"pathName": "pages/clock/myfollow/myfollow",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/my/my",
+					"pathName": "pages/admin/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/myfollow/myfollow",
+					"pathName": "pages/clock/myfollow/myfollow",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/fast/fast",
+					"pathName": "pages/clock/fast/fast",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/clock/new/new",
+					"pathName": "pages/clock/new/new",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cart/cart",
+					"pathName": "pages/cart/cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shopend/shopend",
+					"pathName": "pages/shopend/shopend",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/my/my",
+					"pathName": "pages/admin/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/cart/cart",
+					"pathName": "pages/cart/cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/my/my",
+					"pathName": "pages/admin/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/log/log",
+					"pathName": "pages/admin/log/log",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/admin/register/register",
+					"pathName": "pages/admin/register/register",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/notice/notice",
+					"pathName": "pages/notice/notice",
 					"scene": null
 				}
 			]

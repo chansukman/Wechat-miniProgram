@@ -1,0 +1,5 @@
+<!--miniprogram/pages/vip/subject/english/english.wxml-->
+<view wx:for="{{proList}}" wx:key="key">
+<image class="image" src="{{item.image}}"></image>
+<text class="desc">{{item.desc}}</text>
+</view>

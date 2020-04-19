@@ -1,10 +1,19 @@
 <view class="zitie-column" wx:for="{{proList}}" wx:key="key" >
-<view class="zitie-body" bindtap="{{item.works}}" >
+<view class="zitie-body"  >
 
-<image class="zitie-logo" src="{{item.logo}}"></image>
-<view class="zitie-title">{{item.title}}</view>
-<text class="zitie-desc">{{item.desc}}</text>
+  <image class="zitie-logo" src="{{item.logo}}"></image>
+<view>
+   <view class="zitie-title" bindtap="{{item.buys}}">
+   <text>{{item.title}}</text>
+   <text>￥{{item.price}}</text>
+   <image class="btn-buy" src="{{item.buy}}" ></image>
+</view> 
+ 
+</view>
+<view class="pro-footer">
+<text class="zitie-desc" bindtap="{{item.works}}">{{item.desc}}</text>
 <view class="line"></view>
+</view>
+</view>
+</view>
 
-</view>
-</view>

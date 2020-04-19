@@ -1,0 +1,138 @@
+<!--pages/createMission/createMission.wxml-->
+<view class='page'>
+  <form bindsubmit='createMission'>
+    <view class="page__bd">
+      <view class="weui-cells__title">新建任务</view>
+
+      <view class="weui-cells weui-cells_after-title">
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">任务名称</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请输入任务名称" name='name'></input>
+          </view>
+
+        </view>
+
+
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label">任务描述</view>
+          </view>
+          <view class="weui-cell__bd">
+            <textarea class="weui-textarea" placeholder="请输入任务描述" style="height: 3.3em" name='desc' />
+            <view class="weui-textarea-counter">0/200</view>
+          </view>
+        </view>
+
+
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <view class="weui-uploader">
+              <view class="weui-uploader__hd">
+                <view class="weui-uploader__title">选择封面</view>
+              </view>
+
+              <view class="weui-uploader__bd">
+                <view class="weui-uploader__files" id="uploaderFiles">
+                  <block wx:for="{{image}}" wx:key="*this">
+                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                      <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                    </view>
+
+                    <view class='delete-button' bindtap="deleteImage">
+                      <view class='delete-button-text'>—</view>
+                    </view>
+                  </block>
+
+
+                </view>
+                <block wx:if="{{!hasImage}}">
+                  <view class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </block>
+              </view>
+
+            </view>
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">开始日期</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{startDate}}" start="2018-09-01" end="2020-09-01" bindchange="bindStartDateChange">
+              <view class="weui-input">{{startDate}}</view>
+            </picker>
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">结束日期</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="date" value="{{endDate}}" start="2018-09-02" end="2020-09-02" bindchange="bindEndDateChange">
+              <view class="weui-input">{{endDate}}</view>
+            </picker>
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">打卡开始时间</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="time" value="{{startTime}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+              <view class="weui-input">{{startTime}}</view>
+            </picker>
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">打卡结束时间</view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker mode="time" value="{{endTime}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
+              <view class="weui-input">{{endTime}}</view>
+            </picker>
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap='chooseLocation'>
+          
+        </view>
+
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindTypeChange" value="{{typeIndex}}" range="{{types}}">
+            </picker>
+          </view>
+        </view>
+
+
+
+      </view>
+      
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          
+          <view class="weui-cell__ft">
+           
+          </view>
+        </view>
+      </view>
+
+      <button form-type='submit'>创建</button>
+
+    </view>
+  </form>
+</view>
