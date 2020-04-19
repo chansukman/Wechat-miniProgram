@@ -1,9 +1,0 @@
-<!--pages/work3/work3.wxml-->
-<view class="work4-body" wx:for="{{proList}}" wx:key="key">
-<view class="work4-title">{{item.title}}</view>
-<text class="work4-desc">{{item.desc}}</text>
-<view>
-<image class="work4-image" src="{{item.image}}"></image>
-</view>
-
-</view>

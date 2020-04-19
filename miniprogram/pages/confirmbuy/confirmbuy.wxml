@@ -1,2 +1,0 @@
-<!--pages/confirmbuy/confirmbuy.wxml-->
-<text class="tips" bindtap="toShouye">支付成功,点击返回首页</text>
